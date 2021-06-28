@@ -6,10 +6,16 @@ const initialState = {
 const pizzasReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PIZZAS': {
-      console.log(action)
       return {
         ...state,
         items: action.payload,
+        isLoaded: true,
+      };
+    }
+    case 'SET_LOADED': {
+      return {
+        ...state,
+        isLoaded: action.payload,
       };
     }
 
